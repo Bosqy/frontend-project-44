@@ -3,3 +3,5 @@
 
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/9ccb85c93ef05b193336/maintainability)](https://codeclimate.com/github/Bosqy/frontend-project-44/maintainability)
+
+[asciinema Sample](https://asciinema.org/a/xVUZEIavEHx54Rkd5GJiOJuHm)
