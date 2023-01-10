@@ -1,5 +1,10 @@
 #!/usr/bin/env node
 
+import playEven from '../src/games/even.js';
+
+playEven(3);
+
+/*
 import readlineSync from 'readline-sync';
 
 console.log('Welcome to the Brain Games!');
@@ -36,3 +41,4 @@ while (attemptRemains > 0) {
 }
 
 console.log(goodbyeMessage);
+*/

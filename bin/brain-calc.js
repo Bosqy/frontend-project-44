@@ -1,5 +1,10 @@
 #!/usr/bin/env node
 
+import playCalc from '../src/games/calc.js';
+
+playCalc(3);
+
+/*
 import readlineSync from 'readline-sync';
 
 console.log('Welcome to the Brain Games!');
@@ -12,7 +17,7 @@ const getRandom = (max) => Math.floor(Math.random() * max);
 const getOperation = () => {
   const operators = ['+', '-', '*'];
   return operators[Math.floor(Math.random() * 3)];
-}
+};
 const calculate = (operand1, operation, operand2) => {
   switch (operation) {
     case '+':
@@ -24,7 +29,8 @@ const calculate = (operand1, operation, operand2) => {
     default:
       break;
   }
-}
+  return null;
+};
 
 let attemptRemains = 3;
 const maxNumber = 100;
@@ -48,3 +54,4 @@ while (attemptRemains > 0) {
 }
 
 console.log(goodbyeMessage);
+*/
