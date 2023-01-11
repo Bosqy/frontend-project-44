@@ -1,6 +1,6 @@
-import readlineSync from 'readline-sync';
-import welcomeMessage, { getRandom } from '../index.js';
-import helloDialog from '../cli.js';
+import createGame, { getRandom } from '../index.js';
+
+const ruleMessage = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 const isPrime = (num) => {
   const maxDivisor = Math.floor(num / 2);
@@ -12,30 +12,13 @@ const isPrime = (num) => {
   return 'yes';
 };
 
-const playPrime = (maxAttempts) => {
-  let attemptRemains = maxAttempts;
-  welcomeMessage();
-  const name = helloDialog();
-  console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
-  const maxNumber = 100;
-  let goodbyeMessage = `Congratulations, ${name}!`;
-
-  while (attemptRemains > 0) {
-    const num = getRandom(maxNumber);
-    console.log(`Question: ${num}`);
-    const correctAnswer = isPrime(num);
-    const answer = readlineSync.question('Your answer: ');
-    if (correctAnswer === answer) {
-      console.log('Correct!');
-      attemptRemains -= 1;
-    } else {
-      console.log(`'${answer}' is wrong answer ;( correct answer was '${correctAnswer}'`);
-      goodbyeMessage = `Let's try again, ${name}!`;
-      attemptRemains = 0;
-    }
-  }
-
-  console.log(goodbyeMessage);
+const roundOfPrime = () => {
+  const maxNum = 1000;
+  const question = getRandom(maxNum);
+  const correctAnswer = isPrime(question);
+  return [question, correctAnswer];
 };
+
+const playPrime = () => createGame(roundOfPrime, ruleMessage);
 
 export default playPrime;
