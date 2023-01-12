@@ -7,16 +7,16 @@ const isPrime = (num) => {
   const maxDivisor = Math.floor(num / 2);
   for (let i = 2; i <= maxDivisor; i += 1) {
     if (num % i === 0) {
-      return 'no';
+      return false;
     }
   }
-  return 'yes';
+  return true;
 };
 
 const roundOfPrime = () => {
   const maxNum = 1000;
   const question = getRandom(maxNum);
-  const correctAnswer = isPrime(question);
+  const correctAnswer = isPrime(question) ? 'yes' : 'no';
   return [question, correctAnswer];
 };
 
