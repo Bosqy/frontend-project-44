@@ -3,30 +3,27 @@ import getRandom from '../utils.js';
 
 const ruleMessage = 'What number is missing in the progression?';
 
-const getProgression = (start, incr, total, blank) => {
+const getProgressionMember = (start, incr, position) => start + incr * position;
+
+const getProgressionQuestion = (start, incr, total, blank) => {
   const progression = [];
-  let member;
-  let missingElement;
-  for (let i = 1; i <= total; i += 1) {
-    member = start + incr * (i - 1);
+  for (let i = 0; i < total; i += 1) {
     if (i === blank) {
       progression.push('..');
-      missingElement = member;
     } else {
-      progression.push(member);
+      progression.push(getProgressionMember(start, incr, i));
     }
   }
-  return [progression.join(' '), missingElement];
+  return progression.join(' ');
 };
 
 const roundOfProgression = () => {
   const start = getRandom(100);
   const incr = getRandom(18) + 2;
   const total = 10;
-  const blank = getRandom(total - 1) + 1;
-  const progression = getProgression(start, incr, total, blank);
-  const question = progression[0];
-  const correctAnswer = progression[1];
+  const blank = getRandom(total - 1);
+  const question = getProgressionQuestion(start, incr, total, blank);
+  const correctAnswer = getProgressionMember(start, incr, blank);
   return [question, `${correctAnswer}`];
 };
 
