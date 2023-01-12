@@ -5,5 +5,5 @@ brain-games:
 publish:
 	npm publish --dry-run
 eslint:
-	npx eslint --fix .
+	npx eslint --no-eslintrc --config .eslintrc.yml --fix .
 
