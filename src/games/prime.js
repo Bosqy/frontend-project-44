@@ -1,4 +1,5 @@
-import createGame, { getRandom } from '../index.js';
+import createGame from '../index.js';
+import getRandom from '../utils.js';
 
 const ruleMessage = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 

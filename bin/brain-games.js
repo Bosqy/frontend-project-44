@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import helloDialog from '../src/cli.js';
+import showGreeting from '../src/cli.js';
 
 console.log('Welcome to the Brain Games!');
-helloDialog();
+showGreeting();

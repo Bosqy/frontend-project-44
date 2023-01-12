@@ -1,7 +1,7 @@
 {
   "name": "@hexlet/code",
   "version": "1.0.0",
-  "description": "Hexlet Frontend First Project",
+  "description": "Set of small mathematic console games",
   "type": "module",
   "main": "index.js",
   "bin": {

@@ -1,32 +1,33 @@
-import createGame, { getRandom } from '../index.js';
+import createGame from '../index.js';
+import getRandom from '../utils.js';
 
 const ruleMessage = 'What is the result of the expression?';
 
-const getOperation = () => {
+const getOperator = () => {
   const operators = ['+', '-', '*'];
   return operators[getRandom(operators.length)];
+};
+
+const calculate = (operand1, operator, operand2) => {
+  switch (operator) {
+    case '+':
+      return operand1 + operand2;
+    case '-':
+      return operand1 - operand2;
+    case '*':
+      return operand1 * operand2;
+    default:
+      return null;
+  }
 };
 
 const roundOfCalc = () => {
   const maxNumber = 20;
   const operand1 = getRandom(maxNumber);
   const operand2 = getRandom(maxNumber);
-  const operation = getOperation();
-  let correctAnswer;
-  switch (operation) {
-    case '+':
-      correctAnswer = operand1 + operand2;
-      break;
-    case '-':
-      correctAnswer = operand1 - operand2;
-      break;
-    case '*':
-      correctAnswer = operand1 * operand2;
-      break;
-    default:
-      break;
-  }
-  return [`${operand1} ${operation} ${operand2}`, `${correctAnswer}`];
+  const operator = getOperator();
+  const correctAnswer = calculate(operand1, operator, operand2);
+  return [`${operand1} ${operator} ${operand2}`, `${correctAnswer}`];
 };
 
 const playCalc = () => createGame(roundOfCalc, ruleMessage);

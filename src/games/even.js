@@ -1,4 +1,5 @@
-import createGame, { getRandom } from '../index.js';
+import createGame from '../index.js';
+import getRandom from '../utils.js';
 
 const ruleMessage = 'Answer "yes" if the number is even, otherwise answer "no".';
 
