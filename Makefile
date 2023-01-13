@@ -1,7 +1,7 @@
 install:
 	npm ci
 eslint:
-	npx eslnit .
+	npx eslint --no-eslintrc --config .eslintrc.yml .
 brain-games:
 	node bin/brain-games.js
 brain-calc:

@@ -6,9 +6,9 @@ const createGame = (roundOfGame, ruleMessage) => {
   console.log(`Hello, ${userName}!`);
   console.log(ruleMessage);
 
-  let goodbyeMessage = `Congratulations, ${userName}!`;
+  const roundsCount = 3;
 
-  for (let i = 0; i < 3; i += 1) {
+  for (let i = 0; i < roundsCount; i += 1) {
     const [question, correctAnswer] = roundOfGame();
     console.log(`Question: ${question}`);
     const userAnswer = readlineSync.question('Your answer: ');
@@ -17,11 +17,11 @@ const createGame = (roundOfGame, ruleMessage) => {
       console.log('Correct!');
     } else {
       console.log(`'${userAnswer}' is wrong answer ;( correct answer was '${correctAnswer}'`);
-      goodbyeMessage = `Let's try again, ${userName}!`;
-      i = 3;
+      console.log(`Let's try again, ${userName}!`);
+      return;
     }
   }
-  console.log(goodbyeMessage);
+  console.log(`Congratulations, ${userName}!`);
 };
 
 export default createGame;
