@@ -1,5 +1,5 @@
 import createGame from '../index.js';
-import getRandom from '../utils.js';
+import getRandomNumber from '../utils.js';
 
 const ruleMessage = 'What number is missing in the progression?';
 
@@ -18,10 +18,10 @@ const getProgressionQuestion = (start, incr, total, blank) => {
 };
 
 const roundOfProgression = () => {
-  const start = getRandom(100);
-  const incr = getRandom(18) + 2;
+  const start = getRandomNumber(100);
+  const incr = getRandomNumber(18) + 2;
   const total = 10;
-  const blank = getRandom(total - 1);
+  const blank = getRandomNumber(total - 1);
   const question = getProgressionQuestion(start, incr, total, blank);
   const correctAnswer = getProgressionMember(start, incr, blank);
   return [question, `${correctAnswer}`];

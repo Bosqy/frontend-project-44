@@ -1,11 +1,11 @@
 import createGame from '../index.js';
-import getRandom from '../utils.js';
+import getRandomNumber from '../utils.js';
 
 const ruleMessage = 'What is the result of the expression?';
 
 const getOperator = () => {
   const operators = ['+', '-', '*'];
-  return operators[getRandom(operators.length)];
+  return operators[getRandomNumber(operators.length)];
 };
 
 const calculate = (operand1, operator, operand2) => {
@@ -23,8 +23,8 @@ const calculate = (operand1, operator, operand2) => {
 
 const roundOfCalc = () => {
   const maxNumber = 20;
-  const operand1 = getRandom(maxNumber);
-  const operand2 = getRandom(maxNumber);
+  const operand1 = getRandomNumber(maxNumber);
+  const operand2 = getRandomNumber(maxNumber);
   const operator = getOperator();
   const correctAnswer = calculate(operand1, operator, operand2);
   return [`${operand1} ${operator} ${operand2}`, `${correctAnswer}`];
