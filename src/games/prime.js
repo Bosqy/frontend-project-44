@@ -4,7 +4,7 @@ import getRandomNumber from '../utils.js';
 const ruleMessage = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 const isPrime = (num) => {
-  const maxDivisor = Math.floor(num / 2);
+  const maxDivisor = Math.sqrt(num);
   for (let i = 2; i <= maxDivisor; i += 1) {
     if (num % i === 0) {
       return false;
