@@ -14,8 +14,7 @@ const isPrime = (num) => {
 };
 
 const roundOfPrime = () => {
-  const maxNum = 1000;
-  const question = getRandomNumber(maxNum);
+  const question = getRandomNumber(1000);
   const correctAnswer = isPrime(question) ? 'yes' : 'no';
   return [question, correctAnswer];
 };
